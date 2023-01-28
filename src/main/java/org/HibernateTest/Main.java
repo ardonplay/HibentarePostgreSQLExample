@@ -7,7 +7,6 @@ public class Main {
 
   public static void main(String[] args) {
 
-    int const test 
     Session session = HibernateUtil.getSessionFactory().openSession();
 
     for (Accounts accounts : new AccountsHelper().getAccountsList()) {
