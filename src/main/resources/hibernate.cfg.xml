@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-  "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-  "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-
     <!-- Connection settings -->
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/ardonplay</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/atm</property>
     <property name="hibernate.connection.username">ardonplay</property>
     <property name="hibernate.connection.password">ardonplay</property>
 
     <!-- SQL dialect -->
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
+    <property name="hibernate.current_session_context_class">thread</property>
     <!-- Print executed SQL to stdout -->
     <property name="show_sql">true</property>
 
@@ -24,8 +23,8 @@
     <property name="hibernate.hbm2ddl.auto">update</property>
 
     <!-- Annotated entity classes -->
-    <mapping class="org.HibernateTest.Model.Accounts"/>
-
+    <mapping class="org.HibernateFull.Model.Person"/>
+    <mapping class="org.HibernateFull.Model.Card"/>
 
   </session-factory>
 </hibernate-configuration>
