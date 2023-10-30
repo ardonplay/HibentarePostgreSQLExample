@@ -1,21 +1,27 @@
 package org.HibernateFull;
 
-import org.HibernateFull.Model.Person;
+import org.HibernateFull.Model.BankDetails;
+import org.HibernateFull.Model.Customer;
+import org.HibernateFull.Model.enums.PersonType;
+import org.hibernate.Session;
 
-import java.util.List;
+import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        List<Person> persons= HibernateUtil.getEntries(Person.class);
-
-        System.out.println(persons);
-
-        //HibernateUtil.deleteEntry(persons);
-
-        //Person person = new Person("Vladimir", "Moshchuk", "375298277252");
-        //HibernateUtil.addEntry(person);
-        System.out.println(HibernateUtil.getFreeID(Person.class));
-
-
+        Customer customer =new Customer("Aboa6t5", PersonType.INDIVIDUAL, "abobaStreetytyty", "14457478ytytyt");
+        BankDetails bankDetails = new BankDetails("fghj", "fgh");
+        customer.setBankDetails(bankDetails);
+        try(Session session = HibernateUtil.getSessionFactory().getCurrentSession()){
+            try {
+                session.beginTransaction();
+                Customer customer1 = session.get(Customer.class, UUID.fromString("ca2782ca-4069-4218-a196-51fc1afbd733"));
+                session.remove(customer1);
+                //session.persist(customer);
+                session.getTransaction().commit();
+            }finally {
+                session.close();
+            }
+        }
     }
 }
