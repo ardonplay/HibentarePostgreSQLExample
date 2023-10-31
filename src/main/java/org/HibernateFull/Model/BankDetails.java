@@ -25,7 +25,8 @@ public class BankDetails {
     @NonNull
     private String name;
 
-    @OneToOne(mappedBy = "bankDetails")
+    @OneToOne()
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
 
 }

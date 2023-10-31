@@ -37,7 +37,6 @@ public class Customer {
     @NonNull
     private String phoneNumber;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "bank_details_id", referencedColumnName = "id")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, mappedBy = "customer")
     private BankDetails bankDetails;
 }

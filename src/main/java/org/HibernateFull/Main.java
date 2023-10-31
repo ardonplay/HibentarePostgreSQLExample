@@ -9,15 +9,13 @@ import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Customer customer =new Customer("Aboa6t5", PersonType.INDIVIDUAL, "abobaStreetytyty", "14457478ytytyt");
-        BankDetails bankDetails = new BankDetails("fghj", "fgh");
+        Customer customer =new Customer("Aboa6t54354", PersonType.INDIVIDUAL, "abobaStreetytyt435", "86754975");
+        BankDetails bankDetails = new BankDetails("fghghfhj", "fghhjh");
         customer.setBankDetails(bankDetails);
         try(Session session = HibernateUtil.getSessionFactory().getCurrentSession()){
             try {
                 session.beginTransaction();
-                Customer customer1 = session.get(Customer.class, UUID.fromString("ca2782ca-4069-4218-a196-51fc1afbd733"));
-                session.remove(customer1);
-                //session.persist(customer);
+                session.remove(session.get(Customer.class, UUID.fromString("38aa7515-6b36-460a-9e89-90afc5aa6d16")));
                 session.getTransaction().commit();
             }finally {
                 session.close();

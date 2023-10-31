@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="pbz_lr2@localhost" uuid="73734bbe-cbb2-4c90-b9d9-b7063100939e">
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="c757ce58-26a3-4e8b-9bf1-700d75c9e85a">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/home/ardonplay/Developer/HibernatePostgresQlExample/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/pbz_lr2</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
